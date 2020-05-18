@@ -14,7 +14,10 @@ class BeerEnthusiast
   end
 
   def breweries_visited
-    Visit.all.select {|visit| visit.beer_enthusiast == self}
+    Visit.all.select do|visit|
+      binding.pry
+      visit.beer_enthusiast == self
+    end
   end
 
   def total_spent
