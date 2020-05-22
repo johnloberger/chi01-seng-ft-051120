@@ -1,0 +1,12 @@
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+
+# Describe rake task for documentation outputs in terminal
+desc "Start our app console"
+# Define the task name (sometimes nested within a "namespace")
+task :console do
+  # Log SQL queries as they are run by Active Record
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  # Hop into an IRB session that knows about the whole app/DB connection
+  Pry.start
+end
