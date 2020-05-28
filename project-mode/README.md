@@ -7,7 +7,10 @@
 # FungiFinders
 
 ## (A command line app for mushroom foragers to keep track of all their findings)
-
+-------------< Expertise >---------
+|               user_id            |
+|          mushroom_id             |
+|                                  |
 User ------< Finding >--------- Mushroom
 
 users        findings           mushrooms
@@ -16,6 +19,11 @@ id             id                 id
 name           user_id            species
 fav_color      mushroom_id        habitat
                notes
+
+expertises
+id
+user_id
+mushroom_id
 
 Finding belongs to mushroom
 Finding belongs to user

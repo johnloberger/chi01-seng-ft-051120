@@ -12,7 +12,7 @@ module CliMethods
   end
 
   def self.get_user_menu_choice
-    puts "1. See your mushrooms, 2. Add a finding, 3. Edit a note, 4. Delete a finding, type 'exit' to leave."
+    puts "1. See your mushrooms, 2. Add a finding, 3. Edit a note, 4. Delete a finding, 5. Announce expertise; type 'exit' to leave."
     gets.chomp
   end
 
@@ -24,5 +24,16 @@ module CliMethods
     puts "please type a finding id:"
     finding_id = gets.chomp
     Finding.find(finding_id)
+  end
+
+  def self.select_mushroom_from_list
+    puts "Please type the id of the mushroom:"
+    Mushroom.all.each do |mushroom| 
+      puts mushroom.list_info
+    end
+    puts
+    print "id: "
+    chosen_id = gets.chomp
+    Mushroom.find(chosen_id)
   end
 end

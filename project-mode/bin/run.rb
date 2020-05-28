@@ -26,14 +26,7 @@ if current_user
       puts current_user.mushrooms
     when "2"
       # adding a finding
-      puts "Please type the id of the mushroom:"
-      Mushroom.all.each do |mushroom| 
-        puts mushroom.list_info
-      end
-      puts
-      print "id: "
-      chosen_id = gets.chomp
-      found_mushroom = Mushroom.find(chosen_id)
+      found_mushroom = CliMethods.select_mushroom_from_list
 
       puts "Please enter notes of your encounter!"
 
@@ -77,6 +70,13 @@ if current_user
 
       finding.delete
       puts "Deleted! Press Enter to continue."
+      gets.chomp
+    when "5"
+      # adding an expertise (create expertise)
+      known_mushroom = CliMethods.select_mushroom_from_list
+      # Expertise.create(mushroom: known_mushroom, expert: current_user)
+      current_user.known_mushrooms << known_mushroom
+      puts "Noted, you scholar, you! Press Enter to continue."
       gets.chomp
     end
 
