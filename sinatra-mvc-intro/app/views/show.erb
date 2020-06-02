@@ -4,3 +4,5 @@ Hello, here's a book with ID: <%= @book.id %>
 
 <h1><a href="/books/<%= @book.id %>"><%= @book.title %></a></h1>
 <p><%= @book.snippet %></p>
+
+<p><a href="/books/<%= @book.id %>/edit">Edit this book</a></p>

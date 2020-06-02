@@ -11,7 +11,7 @@
   * HTTP
   * Method vs URL
   * Ingredients of a "route"
-  
+
 - Walk through a Sinatra app layout
 - Use Sinatra Controllers to:
   * Respond with templated HTML using .erb
@@ -20,3 +20,14 @@
 - Use Sinatra Controllers to access Model data
 - Link from response to the next request
 - Explore redirects
+
+- Explore 3 ways to get params to a Sinatra controller:
+  * Dynamic url pattern eg '/books/:id' => {id: "5"}
+  * Query string eg 'books/3?detail_level=all&mobile=false => {detail_level: "all", mobile: false}
+  * Form inputs
+
+- Work with routes that DON'T use 'get' as the HTTP verb
+- Discuss default behaviors on the web ie browser elements and default http methods
+- Submit some forms
+- Process some params data
+- ***explore nesting of data???
