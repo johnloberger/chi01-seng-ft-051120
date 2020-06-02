@@ -1,0 +1,12 @@
+<h1>Edit the Bird</h1>
+
+<form action="/birds/<%= @bird.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="bird[name]" value="<%= @bird.name %>">
+  <label for="call">Call:</label>
+  <input type="text" id="call" name="bird[call]" value="<%= @bird.call %>">
+  <label for="flavor">Flavor:</label>
+  <input type="text" id="flavor" name="bird[flavor]" value="<%= @bird.flavor %>">
+  <input type="submit">
+</form>

@@ -1,0 +1,12 @@
+<h1><%= @bird.name %></h1>
+
+<p><%= @bird.flavor %> makes me say "<%= @bird.call %>"</p>
+
+<p><a href="/birds/<%= @bird.id %>/edit">Edit</a></p>
+
+<form action="/birds/<%= @bird.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+<p><a href="/birds">Back</a></p>

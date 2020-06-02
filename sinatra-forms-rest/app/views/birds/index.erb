@@ -1,0 +1,7 @@
+<h1>Birds</h1>
+
+<a href="/birds/new">Create Bird</a>
+
+<% @birds.each do |bird| %>
+  <p><a href="/birds/<%= bird.id %>" ><%= bird.name %></a></p>
+<% end %>
