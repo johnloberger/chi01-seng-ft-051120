@@ -1,0 +1,19 @@
+<h1>New Nest</h1>
+
+<% @nest.errors.full_messages.each do |error| %>
+  <p style='color: red'><%= error %></p>
+<% end %>
+
+<form method="post" action="/nests">
+  <label for="tree_name">Tree Name:</label>
+  <input type="text" id="tree_name" name="nest[tree_name]" value="<%= @nest.tree_name %>">
+  <label for="elevation">Elevation:</label>
+  <input type="number" id="elevation" name="nest[elevation]" value="<%= @nest.elevation %>">
+  <input type="submit" value="IKEA MODE">
+  <br>
+  <h3>Birds who have visited:</h3>
+  <% @birds.each do |bird| %>
+    <label for="bird-<%= bird.id %>"><%= bird.name %></label>
+    <input type="checkbox" id="bird-<%= bird.id %>" name="nest[bird_ids][]" value="<%= bird.id %>">
+  <% end %>
+</form>

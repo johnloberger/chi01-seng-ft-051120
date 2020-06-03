@@ -1,0 +1,13 @@
+<h1>Create a Song</h1>
+
+<form action="/songs" method="post">
+  <label for="title">Title:</label>
+  <input id="title" name="song[title]" type="text">
+  <label for="bird_id">Bird:</label>
+  <select name="song[bird_id]" id="bird_id">
+    <% @birds.each do |bird| %>
+      <option value="<%= bird.id %>"><%= bird.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Create Song">
+</form>
