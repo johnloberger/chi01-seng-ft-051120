@@ -1,0 +1,30 @@
+<%= form_for @sea, :html => {class: "container"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :temperature %>
+  <%= f.number_field :temperature, class: "form-control" %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio, class: "form-control" %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url, class: "form-control" %>
+
+  <%= f.label :mood %>
+  <%= f.text_field :mood, class: "form-control" %>
+
+  <%= f.label :favorite_color %>
+  <%= f.text_field :favorite_color, class: "form-control" %>
+
+  <%= f.label :scariest_creature %>
+  <%= f.text_field :scariest_creature, class: "form-control" %>
+
+  <%= f.label :has_mermaids %>
+  <%= f.check_box :has_mermaids, class: "form-control btn btn-info" %>
+
+  <%=  f.submit "Edit", class: "btn btn-info" %>
+
+  <% end %>
+
+  <%= button_to "Delete", {action: :destroy}, class: "btn btn-info form-control", method: :delete %>
