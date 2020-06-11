@@ -1,0 +1,17 @@
+<h1>Dogs Index</h1>
+
+<% @dogs.each do |dog| %>
+  <p><%= link_to dog.name, dog_path(dog) %> - <%= dog.employees.count %></p>
+<% end %>
+<br>
+<br>
+
+<% if flash[:sorted]%>
+  <%= link_to "Click to Unsort Dogs",  dogs_path %>
+<% else %>
+  <%= link_to "Click to Sort Dogs",  dogs_sort_path %>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Click for All Employees", employees_path %>
